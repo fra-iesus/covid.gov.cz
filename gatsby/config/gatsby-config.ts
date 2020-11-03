@@ -36,29 +36,22 @@ const config = {
         ],
       },
     },
+
     {
-      resolve: 'gatsby-plugin-seo',
+      resolve: 'gatsby-plugin-next-seo',
       options: {
-        siteName: 'Covid Portál',
-        defaultSiteImage: '/img/logo.png',
-        siteUrl: 'https://covidportal.cz',
-        // twitterCreator: '@twitterhandle',
-        // twitterSite: '@twitterhandle',
-        globalSchema: `{
-            "@type": "WebSite",
-            "@id": "https://example.com/#website",
-            "url": "https://example.com/",
-            "name": "Example Site Title",
-            "publisher": {
-              "@id": "https://example.com/about/#organization"
-            },
-            "image": {
-              "@type": "ImageObject",
-              "@id": "https://example.com/#logo",
-              "url": "https://example.com/img/logo.png",
-              "caption": "Example Company Logo"
-            }
-          }`,
+        title: 'Covid Portál - informace a opatření',
+        titleTemplate: '%s | Covid Portál',
+        noindex: true,
+        nofollow: true,
+        description:
+          'Portál s aktuálními opatřeními a informacemi ohledně pandemie koronaviru Covid-19.',
+        openGraph: {
+          type: 'website',
+          locale: 'en_IE',
+          url: 'https://www.covid.gov.cz',
+          site_name: 'Covid Portál - informace a opatření',
+        },
       },
     },
     {

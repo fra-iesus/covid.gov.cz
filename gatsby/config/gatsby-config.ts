@@ -94,6 +94,19 @@ const config = {
         trackingIds: ['G-GKH7GB76MH'],
       },
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [`id`, `title`, `content`],
+        resolvers: {
+          situation: {
+            id: node => node.id,
+            title: node =>  node.title,
+            content: node =>  node.content.value
+          },
+        },
+      },
+    },
   ],
 };
 

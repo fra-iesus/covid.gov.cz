@@ -12,6 +12,7 @@ import classes from './header.module.scss';
 import headerLogo from './header-logo.svg';
 import { HeaderLocaleSelect } from './header-locale-select';
 import I18n, { TRoute } from '@/components/i18n';
+import SearchEngine from '@/components/search-engine';
 
 interface NavItem {
   label: string;
@@ -94,7 +95,9 @@ const Header: React.FC<Props> = ({ navItems }) => {
               </Col>
               {/* SEARCH */}
               <Col col={12} colLg={4} className="ml-auto">
-                <SearchBox onSearch={() => {}} />
+                <SearchEngine>
+                  {({ onSearch }) => <SearchBox onSearch={onSearch} />}
+                </SearchEngine>
               </Col>
             </Row>
           </Col>
